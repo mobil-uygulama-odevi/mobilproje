@@ -10,8 +10,8 @@ import {auth} from 'firebase/app'
 })
 export class LoginPage implements OnInit {
 
-username:string=""
-password:string=""
+ username:string;
+ password:string;
 
   constructor(public afAuth:AngularFireAuth) { }
 
@@ -24,6 +24,9 @@ password:string=""
       const res = await this.afAuth.auth.signInWithEmailAndPassword(username+'@gmail.com',password)
     } catch (error) {
       console.dir(error)
+      if(error.code==="auth/user-not-found"){
+        console.log("User not found")
+      }
     }
   }
 
