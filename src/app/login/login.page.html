@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>LOGIN</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,11 +12,13 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"><p class="label">Password</p></ion-label>
+    <ion-label position="floating">Password</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
 </ion-list>
-<ion-button fill="solid" expand="block" color="tertiary" (click)="login()">Login</ion-button>
-<ion-button fill="solid" expand="full" color="dark" [routerLink]="['/register']">Register</ion-button>
+<ion-button fill="solid" expand="block" color="success" (click)="login()">Login</ion-button>
+<ion-button fill="solid" expand="block" color="success" (click)="logingoogle()">Google Plus</ion-button>
+<ion-button fill="solid" expand="block" color="primary" [routerLink]="['/register']">Register</ion-button>
+<ion-button expand="full" fill="clear" [routerLink]="['/forgot']">Reset Password</ion-button>
 </ion-content>

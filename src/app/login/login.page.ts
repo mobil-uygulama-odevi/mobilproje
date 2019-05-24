@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth'
 import {auth} from 'firebase/app'
+import * as firebase from 'firebase/app'
 
 
 @Component({
@@ -28,6 +29,13 @@ export class LoginPage implements OnInit {
         console.log("User not found")
       }
     }
+  }
+
+  logingoogle(){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .then(res=> {
+      console.log(res);
+    })
   }
 
 }
