@@ -1,5 +1,7 @@
 {
-  "name": "myApp",
-  "integrations": {},
+  "name": "ionic4-angular-news",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

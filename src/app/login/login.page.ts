@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth'
 import {auth} from 'firebase/app'
 import * as firebase from 'firebase/app'
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
  username:string;
  password:string;
 
-  constructor(public afAuth:AngularFireAuth) { }
+  constructor(public afAuth:AngularFireAuth,public router: Router) { }
 
   ngOnInit() {
   }
@@ -29,6 +29,7 @@ export class LoginPage implements OnInit {
         console.log("User not found")
       }
     }
+    this.router.navigate(['/tabs'])
   }
 
   logingoogle(){
@@ -36,6 +37,7 @@ export class LoginPage implements OnInit {
     .then(res=> {
       console.log(res);
     })
+    this.router.navigate(['/tabs'])
   }
-
+  
 }
